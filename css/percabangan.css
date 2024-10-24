@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1d4ed8;
+    --accent-color: #7dd3fc;
+    --background-color: #0f172a;
+    --card-background: rgba(255, 255, 255, 0.1);
+    --text-color: #f8fafc;
+    --glass-background: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Background Animation */
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.gradient-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        var(--primary-color) 0%,
+        var(--secondary-color) 25%,
+        #1e3a8a 50%,
+        #172554 75%,
+        var(--background-color) 100%
+    );
+    animation: rotate 30s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--accent-color), #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-content {
+    margin-top: 84px;
+    padding: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.progress-bar {
+    background: var(--glass-background);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+.progress-step {
+    flex: 1;
+    height: 0.5rem;
+    background: var(--glass-border);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: var(--accent-color);
+}
+
+.problem-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.problem-statement, .coding-section {
+    background: var(--glass-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) ease;
+}
+
+.problem-statement:hover, .coding-section:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.problem-statement h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.output-section {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    min-height: 100px;
+    margin-top: 1rem;
+    border: 1px solid var(--glass-border);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.solution {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 0.5rem;
+    font-family: monospace;
+    border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+    .problem-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
