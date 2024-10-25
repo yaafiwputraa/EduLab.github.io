@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Percabangan - EduLab TPB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="../css/percabangan.css">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient-bg"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">EduLab TPB - Modul Percabangan</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+
+        <div class="problem-container">
+            <div class="problem-statement">
+                <h2>Soal <span id="questionNumber">1</span>/5</h2>
+                <div id="currentProblem"></div>
+                <button class="btn" onclick="toggleSolution()">Tampilkan Solusi</button>
+                <div id="solution" class="solution"></div>
+            </div>
+
+            <div class="coding-section">
+                <textarea id="codeEditor"></textarea>
+                <button class="btn" onclick="runCode()">Jalankan Kode</button>
+                <div class="output-section" id="output"></div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn" onclick="previousQuestion()" id="prevBtn" disabled>Soal Sebelumnya</button>
+            <button class="btn" onclick="nextQuestion()" id="nextBtn">Soal Berikutnya</button>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    
+    <script src="../js/percabangan.js"></script>
+</body>
+</html>

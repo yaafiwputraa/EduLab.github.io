@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Sorting Algorithm Visualizer">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/sorting.css">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient-bg"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/logo_itb_1024 (1).png" alt="ITB Logo">
+                <span class="logo-text">EduLab TPB</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="title-section">
+            <h1>Sorting Algorithm Visualizer</h1>
+            <p>Experience the power of different sorting algorithms through interactive visualization. Choose an algorithm, adjust the parameters, and watch the magic happen!</p>
+        </section>
+
+        <div class="visualizer-card">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="algorithm">
+                        <i class="fas fa-code"></i> Select Algorithm
+                    </label>
+                    <select id="algorithm" class="custom-select">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="merge">Merge Sort</option>
+                        <option value="quick">Quick Sort</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="arraySize">
+                        <i class="fas fa-chart-bar"></i> Array Size
+                    </label>
+                    <input type="range" id="arraySize" min="5" max="50" value="10">
+                </div>
+
+                <div class="control-group">
+                    <label for="speed">
+                        <i class="fas fa-tachometer-alt"></i> Animation Speed
+                    </label>
+                    <input type="range" id="speed" min="1" max="100" value="50">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="sortBtn" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Start Sorting
+                </button>
+                <button id="randomizeArrayBtn" class="btn btn-secondary">
+                    <i class="fas fa-random"></i> Randomize
+                </button>
+                <button id="resetBtn" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                </button>
+            </div>
+
+            <div class="visualizer">
+                <canvas id="sortingCanvas"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Virtual Lab</h3>
+                <p>Experience interactive learning through visual simulations of computer science concepts, including sorting algorithms.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="../index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sorting">
+                            <i class="fas fa-sort"></i> Sorting Visualizer
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/sorting.js"></script>
+</body>
+</html>
